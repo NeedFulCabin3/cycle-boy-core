@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PixelBoy - GB Emulator Core</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <h1>PixelBoy</h1>
+    <p class="sub">a tiny Game Boy style CPU + tile renderer running in the browser</p>
+  </header>
+
+  <div class="panel">
+    <h2>Load ROM</h2>
+    <input type="file" id="romInput">
+    <div class="btn-row">
+      <button id="stepBtn">Step</button>
+      <button id="runBtn">Run</button>
+      <button id="pauseBtn" class="secondary">Pause</button>
+      <button id="resetBtn" class="secondary">Reset</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Screen</h2>
+    <canvas id="screen" width="160" height="144"></canvas>
+  </div>
+
+  <div class="panel">
+    <h2>Registers</h2>
+    <div id="regView" class="reg-grid"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Log</h2>
+    <div id="log"></div>
+  </div>
+</div>
+
+<script src="cpu.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
