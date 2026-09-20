@@ -1,0 +1,10 @@
+# Local editor directories
+.vscode/
+.idea/
+
+# OS metadata files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
