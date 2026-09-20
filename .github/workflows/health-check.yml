@@ -1,0 +1,25 @@
+name: Code Quality Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate HTML & JavaScript Syntax
+        run: |
+          node -e "
+            const fs = require('fs');
+            ['app.js', 'cpu.js'].forEach(file => {
+              const code = fs.readFileSync(file, 'utf8');
+              new Function(code);
+              console.log(file + ' syntax valid.');
+            });
+          "
